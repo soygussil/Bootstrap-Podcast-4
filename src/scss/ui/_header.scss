@@ -1,6 +1,34 @@
-$rojo: steelblue;
+@use '../custom' as *;
+@use 'utils/mixins' as m;
 
+.site-header{
+    @include m.bgImage('../img/header.jpg',$secondary);
 
-body{
-    background-color: $rojo;
+    .logo{
+        max-width: 20rem;
+        margin: 0 auto;
+        @include media-breakpoint-up(md){
+        margin: 0;
+        }
+    }
+
+    .contenido{
+        padding-top:10rem;
+        padding-bottom: 10rem;
+        @include media-breakpoint-up(md){
+            max-width: 50%;
+        }
+        @include media-breakpoint-up(lg){
+            padding-top:10rem;
+            padding-bottom: 10rem;
+            max-width: 40%;
+        }
+        h1{
+        font-size: 4.5;
+        color:$light;
+        @include media-breakpoint-up(lmd){
+            font-size: 6;
+        }
+        }
+    }
 }
